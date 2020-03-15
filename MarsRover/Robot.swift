@@ -21,7 +21,7 @@ enum Instruction {
     case forward
 }
 
-class Robot {
+class Robot: CustomStringConvertible {
     var location: CGPoint
     var orientation: Orientation
     var isLost = false
@@ -40,7 +40,7 @@ class Robot {
     ///
     /// - Return:
     ///   - Bool: True or False if the instruction was executed
-    func execute(_ instruction: Instruction) -> Bool {
+    @discardableResult func execute(_ instruction: Instruction) -> Bool {
         guard isLost == false else {
             return false
         }
@@ -95,16 +95,21 @@ class Robot {
     /// if orientation == south: (x, y-1)
     /// if orientation == east: (x+1, y)
     /// if orientation == west: (x-1, y)
-
     private func moveForward() {
         var newLocation = location
         
         switch orientation {
         case .north: newLocation.y += 1
-        case .east: newLocation.y -= 1
+        case .south: newLocation.y -= 1
+        case .east: newLocation.x += 1
         case .west: newLocation.x -= 1
-        case .south: newLocation.x += 1
         }
         location = newLocation
+    }
+    
+    /// Object string description.
+    /// e.g 1 12 N LOST
+    var description: String {
+        return "\(Int(location.x)) \(Int(location.y)) \(orientation) \(isLost ? "LOST" : "")"
     }
 }

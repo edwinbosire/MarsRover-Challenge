@@ -18,6 +18,7 @@
 		642B5CEA241E9EAA0094E841 /* GridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CE9241E9EAA0094E841 /* GridTests.swift */; };
 		642B5CEC241EA1420094E841 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CEB241EA1420094E841 /* Extensions.swift */; };
 		642B5CEE241EA2140094E841 /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CED241EA2140094E841 /* Robot.swift */; };
+		642B5CF0241EA84D0094E841 /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CEF241EA84D0094E841 /* RobotTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		642B5CE9241E9EAA0094E841 /* GridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTests.swift; sourceTree = "<group>"; };
 		642B5CEB241EA1420094E841 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		642B5CED241EA2140094E841 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		642B5CEF241EA84D0094E841 /* RobotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				642B5CDA241E99F50094E841 /* MarsRoverTests.swift */,
 				642B5CDC241E99F50094E841 /* Info.plist */,
 				642B5CE9241E9EAA0094E841 /* GridTests.swift */,
+				642B5CEF241EA84D0094E841 /* RobotTests.swift */,
 			);
 			path = MarsRoverTests;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				642B5CDB241E99F50094E841 /* MarsRoverTests.swift in Sources */,
+				642B5CF0241EA84D0094E841 /* RobotTests.swift in Sources */,
 				642B5CEA241E9EAA0094E841 /* GridTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
