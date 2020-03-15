@@ -1,7 +1,11 @@
 ## Mars Rover Challenge
 
 
-Run the project in xcode or run the unit tests.
+### Run the app
+
+The recommended way is to run the unit tests CMD + U.
+There is a quickly thrown together interface with three buttons that execute the sample app
+
 
 The sample data is used in MarsRoverTests.swift under unit tests (MarsRoverTests)
 
@@ -14,5 +18,6 @@ TODO:
 
 
 Good test coverage on my code. ViewControllers and Delegates are hard to test and would fare much better with UI tests
+
 
 ![Image of Test Coverage](Images/test-coverage-report.png)
