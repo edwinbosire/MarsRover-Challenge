@@ -8,7 +8,11 @@
 
 import UIKit
 
-class Grid<T> {
+protocol Sizable {
+    var size: CGSize { get }
+}
+
+class Grid<T>: Sizable {
     let size: CGSize
     private var array: Array<T?>
     

@@ -122,8 +122,6 @@ class RobotTests: XCTestCase {
         
         robot.execute(.forward)
         XCTAssertFalse(robot.isLost, "Robot should be at (1, 0)")
-        
         XCTAssertEqual(robot.description, "1 0 W ")
-
     }
 }

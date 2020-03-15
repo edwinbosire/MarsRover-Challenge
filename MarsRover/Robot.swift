@@ -132,6 +132,18 @@ class Robot: CustomStringConvertible {
         vector.location = newLocation
     }
     
+    /// Tries to figure out if the robot can move to said location in the world
+    /// This will detect if the robot is on the edge and facing the edge marking that move as invalid.
+    func canMove(in world: Sizable) -> Bool {
+        if (orientation == .north && location.y + 1 > world.size.height - 1) ||
+            (orientation == .east && location.x + 1 > world.size.width - 1) ||
+            (orientation == .south && location.y - 1 < 0) ||
+            (orientation == .west && location.x - 1 < 0) {
+            return false
+        }
+        return true
+    }
+    
     /// Object string description.
     /// e.g 1 12 N LOST
     var description: String {
