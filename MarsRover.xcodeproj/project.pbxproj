@@ -14,6 +14,7 @@
 		642B5CCD241E99F40094E841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642B5CCC241E99F40094E841 /* Assets.xcassets */; };
 		642B5CD0241E99F40094E841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642B5CCE241E99F40094E841 /* LaunchScreen.storyboard */; };
 		642B5CDB241E99F50094E841 /* MarsRoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CDA241E99F50094E841 /* MarsRoverTests.swift */; };
+		642B5CE8241E9B330094E841 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CE7241E9B330094E841 /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		642B5CD6241E99F50094E841 /* MarsRoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarsRoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		642B5CDA241E99F50094E841 /* MarsRoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverTests.swift; sourceTree = "<group>"; };
 		642B5CDC241E99F50094E841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		642B5CE7241E9B330094E841 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				642B5CC3241E99EC0094E841 /* AppDelegate.swift */,
 				642B5CC5241E99EC0094E841 /* SceneDelegate.swift */,
+				642B5CE7241E9B330094E841 /* Grid.swift */,
 				642B5CE6241E9A880094E841 /* ViewController */,
 				642B5CE5241E9A250094E841 /* Storyboard */,
 				642B5CCC241E99F40094E841 /* Assets.xcassets */,
@@ -219,6 +222,7 @@
 				642B5CC8241E99EC0094E841 /* ViewController.swift in Sources */,
 				642B5CC4241E99EC0094E841 /* AppDelegate.swift in Sources */,
 				642B5CC6241E99EC0094E841 /* SceneDelegate.swift in Sources */,
+				642B5CE8241E9B330094E841 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
