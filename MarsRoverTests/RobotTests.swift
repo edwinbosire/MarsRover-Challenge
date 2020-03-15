@@ -112,7 +112,7 @@ class RobotTests: XCTestCase {
         robot.isLost = true
         XCTAssertTrue(robot.isLost, "Robot should be lost at (-1, 0)")
         
-        XCTAssertEqual(robot.description, "-1 0 west LOST")
+        XCTAssertEqual(robot.description, "-1 0 W LOST")
     }
 
     func testRobotOutputIfNotLost() {
@@ -121,7 +121,7 @@ class RobotTests: XCTestCase {
         robot.execute(.forward)
         XCTAssertFalse(robot.isLost, "Robot should be at (1, 0)")
         
-        XCTAssertEqual(robot.description, "1 0 west ")
+        XCTAssertEqual(robot.description, "1 0 W ")
 
     }
 }
