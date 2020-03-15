@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol Sizable {
+protocol Sizeable {
     var size: CGSize { get }
 }
 
-class Grid<T>: Sizable {
+class Grid<T>: Sizeable {
     let size: CGSize
     private var array: Array<T?>
     
@@ -32,3 +32,32 @@ class Grid<T>: Sizable {
     }
 }
 
+
+class Mars {
+    var grid: Grid<Cell>
+    private var lostRobots = [Vector]()
+    
+    init(with size: CGSize) {
+        self.grid = Grid<Cell>(with: size)
+    }
+    
+    
+    /// This function checks if location exists within the boundary
+    ///
+    /// - Parameters:
+    ///     - point: CGPoint to be checked if it's within the grid
+    func locationExists(at point: CGPoint) ->Bool {
+        return point.x >= 0 && point.x <= grid.size.width &&
+            point.y >= 0 && point.y <= grid.size.height
+    }
+    
+    // MARK - Manage Lost Robots
+    func addLost(scent: Vector) {
+        lostRobots.append(scent)
+    }
+    
+    func contains(scent: Vector) -> Bool {
+        return lostRobots.contains(scent)
+    }
+    
+}
