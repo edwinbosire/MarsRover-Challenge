@@ -6,4 +6,20 @@
 //  Copyright © 2020 Edwin Bosire. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+/// Adding an extention to the Size object to allow us to retrieve width & height in Int
+extension CGSize {
+    
+    /// Retrieve width as an Int
+    func getWidth() -> Int {
+        return Int(self.width)
+    }
+    
+    /// Retrieve height as an Int
+    func getHeight() -> Int {
+        return Int(self.height)
+    }
+
+}

@@ -28,17 +28,3 @@ class Grid<T> {
     }
 }
 
-extension CGSize {
-//    func toInteger() -> (width:Int, height: Int) {
-//        return (width: Int(self.width), height:Int(self.height))
-//    }
-    
-    func getWidth() -> Int {
-        return Int(self.width)
-    }
-    
-    func getHeight() -> Int {
-        return Int(self.height)
-    }
-
-}
