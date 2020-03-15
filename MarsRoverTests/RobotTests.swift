@@ -12,7 +12,8 @@ import XCTest
 class RobotTests: XCTestCase {
 
     let vectorZero = Vector(location: .zero)
-    
+    let mars = Mars(with: CGSize(width: 5, height: 5))
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -34,7 +35,7 @@ class RobotTests: XCTestCase {
     
     func testRobotInstructionTurnLeft() {
         
-        let robot = Robot(with: vectorZero)
+        let robot = Robot(with: vectorZero, in: mars)
         
         robot.execute(.left)
         XCTAssertEqual(robot.orientation, .west, "New orientation of robot should be west")

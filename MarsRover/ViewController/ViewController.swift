@@ -24,14 +24,14 @@ class ViewController: UIViewController {
                 
         let robotLocation = CGPoint(x: 1, y: 1)
         let vector = Vector(location: robotLocation, orientation: .east)
-        let robot = Robot(with: vector)
+        let robot = Robot(with: vector, in: mars)
         
         
         let commands = "RFRFRFRF"
         
         for char in commands {
             if let instruction = Instruction(rawValue: String(char)) {
-                robot.execute(instruction, in: mars)
+                robot.execute(instruction)
             }
         }
         
@@ -42,14 +42,14 @@ class ViewController: UIViewController {
         
         let robotLocation = CGPoint(x: 3, y: 2)
         let vector = Vector(location: robotLocation, orientation: .north)
-        let robot = Robot(with: vector)
+        let robot = Robot(with: vector, in: mars)
         
         
         let commands = "FRRFLLFFRRFLL"
         
         for char in commands {
             if let instruction = Instruction(rawValue: String(char)) {
-                robot.execute(instruction, in: mars)
+                robot.execute(instruction)
             }
         }
         
@@ -61,14 +61,14 @@ class ViewController: UIViewController {
           
           let robotLocation = CGPoint(x: 0, y: 3)
           let vector = Vector(location: robotLocation, orientation: .west)
-          let robot = Robot(with: vector)
+          let robot = Robot(with: vector, in: mars)
           
           
           let commands = "LLFFFLFLFL"
           
           for char in commands {
               if let instruction = Instruction(rawValue: String(char)) {
-                  robot.execute(instruction, in: mars)
+                  robot.execute(instruction)
               }
           }
           

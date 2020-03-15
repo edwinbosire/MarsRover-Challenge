@@ -18,6 +18,7 @@ struct Vector: Equatable {
 class Robot: CustomStringConvertible {
     private var vector: Vector
     var isLost = false
+    weak var planet: Mars?
     
     var location: CGPoint {
         get {
@@ -31,8 +32,9 @@ class Robot: CustomStringConvertible {
         }
     }
     
-    init(with vector: Vector) {
+    init(with vector: Vector, in planet: Mars) {
         self.vector = vector
+        self.planet = planet
     }
     
     /// Takes an Instruction object and performs pattern matching executing the stated instruction
@@ -44,7 +46,7 @@ class Robot: CustomStringConvertible {
     ///
     /// - Return:
     ///   - Bool: True or False if the instruction was executed
-    @discardableResult func execute(_ instruction: Instruction, in world: Mars) -> Bool {
+    @discardableResult func execute(_ instruction: Instruction) -> Bool {
         guard isLost == false else {
             return false
         }
@@ -55,7 +57,7 @@ class Robot: CustomStringConvertible {
         case .right:
             turnRight()
         case .forward:
-            moveForward(in: world)
+            moveForward()
         }
         return true
     }
@@ -99,7 +101,10 @@ class Robot: CustomStringConvertible {
     /// if orientation == south: (x, y-1)
     /// if orientation == east: (x+1, y)
     /// if orientation == west: (x-1, y)
-    private func moveForward(in world: Mars) {
+    ///
+    /// We can only move forward in a planet/world
+    private func moveForward() {
+        guard let world = planet else {  return }
         var newLocation = location
         
         switch orientation {
@@ -117,7 +122,6 @@ class Robot: CustomStringConvertible {
             isLost = true
             world.addLost(scent: self.vector)
         }
-        
     }
     
     /// Tries to figure out if the robot can move to said location in the world
