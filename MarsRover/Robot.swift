@@ -30,14 +30,30 @@ enum Instruction {
     case forward
 }
 
-class Robot: CustomStringConvertible {
+/// An object holding both the location and orientation
+struct Vector: Equatable {
     var location: CGPoint
-    var orientation: Orientation
+    var orientation: Orientation = .north
+}
+
+class Robot: CustomStringConvertible {
+    private var vector: Vector
     var isLost = false
     
-    init(with location: CGPoint, orientation: Orientation = .north) {
-        self.location = location
-        self.orientation = orientation
+    var location: CGPoint {
+        get {
+            self.vector.location
+        }
+    }
+    
+    var orientation: Orientation {
+        get {
+            self.vector.orientation
+        }
+    }
+    
+    init(with vector: Vector) {
+        self.vector = vector
     }
     
     /// Takes an Instruction object and performs pattern matching executing the stated instruction
@@ -74,10 +90,10 @@ class Robot: CustomStringConvertible {
     /// east => north
     private func turnLeft() {
         switch orientation {
-        case .north: orientation = .west
-        case .west: orientation = .south
-        case .south: orientation = . east
-        case .east: orientation = .north
+        case .north: vector.orientation = .west
+        case .west: vector.orientation = .south
+        case .south: vector.orientation = . east
+        case .east: vector.orientation = .north
         }
     }
     
@@ -90,10 +106,10 @@ class Robot: CustomStringConvertible {
     /// east => south
     private func turnRight() {
         switch orientation {
-        case .north: orientation = .east
-        case .west: orientation = .north
-        case .south: orientation = . west
-        case .east: orientation = .south
+        case .north: vector.orientation = .east
+        case .west: vector.orientation = .north
+        case .south: vector.orientation = . west
+        case .east: vector.orientation = .south
         }
     }
     
@@ -113,7 +129,7 @@ class Robot: CustomStringConvertible {
         case .east: newLocation.x += 1
         case .west: newLocation.x -= 1
         }
-        location = newLocation
+        vector.location = newLocation
     }
     
     /// Object string description.

@@ -11,6 +11,8 @@ import XCTest
 
 class RobotTests: XCTestCase {
 
+    let vectorZero = Vector(location: .zero)
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -20,19 +22,19 @@ class RobotTests: XCTestCase {
     }
 
     func testRobotDefaultOrientation() {
-        let robot = Robot(with: .zero)
+        let robot = Robot(with: vectorZero)
         
         XCTAssertEqual(robot.orientation, .north, "Default orientation of robot should be North")
     }
     
     func testRobotInitialisedWithDifferentOrientation() {
-        let robot = Robot(with: .zero, orientation: .west )
+        let robot = Robot(with: Vector(location: .zero, orientation: .west) )
         XCTAssertEqual(robot.orientation, .west, "Orientation of robot should be west")
     }
     
     func testRobotInstructionTurnLeft() {
         
-        let robot = Robot(with: .zero)
+        let robot = Robot(with: vectorZero)
         
         robot.execute(.left)
         XCTAssertEqual(robot.orientation, .west, "New orientation of robot should be west")
@@ -48,7 +50,7 @@ class RobotTests: XCTestCase {
     }
     
     func testRobotInstructionTurnRight() {
-        let robot = Robot(with: .zero)
+        let robot = Robot(with: vectorZero)
         
         robot.execute(.right)
         XCTAssertEqual(robot.orientation, .east, "New orientation of robot should be east")
@@ -65,7 +67,7 @@ class RobotTests: XCTestCase {
     }
 
     func testRobotInstructionMoveForward() {
-        let robot = Robot(with: .zero)
+        let robot = Robot(with: vectorZero)
         
         XCTAssertEqual(robot.location, .zero, "Robot should be at (0,0)")
         
@@ -77,7 +79,7 @@ class RobotTests: XCTestCase {
     }
 
     func testRobotInstructionToTurnRightAndMoveForward() {
-        let robot = Robot(with: .zero)
+        let robot = Robot(with: vectorZero)
         
         robot.execute(.right)
         XCTAssertEqual(robot.location, .zero, "Robot should be at (0,0)")
@@ -92,7 +94,7 @@ class RobotTests: XCTestCase {
 
     func testRobotInstructionToTurnLeftAndMoveForward() {
         let location = CGPoint(x: 5, y: 5)
-        let robot = Robot(with: location)
+        let robot = Robot(with: Vector(location: location))
         
         robot.execute(.left)
         XCTAssertEqual(robot.location, location, "Robot should be at \(location)")
@@ -106,7 +108,7 @@ class RobotTests: XCTestCase {
     }
 
     func testRobotOutputIfLost() {
-        let robot = Robot(with: .zero, orientation: .west)
+        let robot = Robot(with: Vector(location: .zero, orientation: .west))
         
         robot.execute(.forward)
         robot.isLost = true
@@ -116,7 +118,7 @@ class RobotTests: XCTestCase {
     }
 
     func testRobotOutputIfNotLost() {
-        let robot = Robot(with: CGPoint(x:2,y:0), orientation: .west)
+        let robot = Robot(with: Vector(location: CGPoint(x:2,y:0), orientation: .west))
         
         robot.execute(.forward)
         XCTAssertFalse(robot.isLost, "Robot should be at (1, 0)")
