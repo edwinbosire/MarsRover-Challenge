@@ -10,7 +10,7 @@ import UIKit
 
 
 /// Adding an extention to the Size object to allow us to retrieve width & height in Int
-extension CGSize {
+public extension CGSize {
     
     /// Retrieve width as an Int
     func getWidth() -> Int {
