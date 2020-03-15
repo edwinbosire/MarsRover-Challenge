@@ -11,24 +11,53 @@ import XCTest
 
 class MarsRoverTests: XCTestCase {
 
+    var mars: Mars?
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        mars = Mars(with: CGSize(width: 5, height: 3))
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        mars = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testSampleInput() {
+        guard let mars = mars else {
+            XCTFail()
+            return
         }
-    }
 
+        let robot1Vector = Vector(location: CGPoint(x: 1, y: 1), orientation: .east)
+        let robot1 = Robot(with: robot1Vector, in: mars)
+
+        for char in "RFRFRFRF" {
+            if let instruction = Instruction(rawValue: String(char)) {
+                robot1.execute(instruction)
+            }
+        }
+
+        XCTAssertEqual(robot1.description, "1 1 E ", "Not expected output")
+        
+        
+        let robot2Vector = Vector(location: CGPoint(x: 3, y: 2), orientation: .north)
+        let robot2 = Robot(with: robot2Vector, in: mars)
+
+        for char in "FRRFLLFFRRFLL" {
+              if let instruction = Instruction(rawValue: String(char)) {
+                  robot2.execute(instruction)
+              }
+          }
+        XCTAssertEqual(robot2.description, "3 3 N LOST", "Not expected output")
+
+        let robot3Vector = Vector(location: CGPoint(x: 0, y: 3), orientation: .west)
+        let robot3 = Robot(with: robot3Vector, in: mars)
+
+        for char in "LLFFFLFLFL" {
+              if let instruction = Instruction(rawValue: String(char)) {
+                  robot3.execute(instruction)
+              }
+          }
+        XCTAssertEqual(robot3.description, "2 3 S ", "Not expected output")
+
+    }
 }

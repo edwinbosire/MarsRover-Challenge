@@ -43,13 +43,7 @@ class Robot: CustomStringConvertible {
     ///
     /// - Parameters:
     ///   - instruction: An enum of type `Instruction`
-    ///
-    /// - Return:
-    ///   - Bool: True or False if the instruction was executed
-    @discardableResult func execute(_ instruction: Instruction) -> Bool {
-        guard isLost == false else {
-            return false
-        }
+    func execute(_ instruction: Instruction) {
         
         switch instruction {
         case .left:
@@ -59,7 +53,6 @@ class Robot: CustomStringConvertible {
         case .forward:
             moveForward()
         }
-        return true
     }
     
     /// Turns the robot's orientation 90º Left.
@@ -116,24 +109,11 @@ class Robot: CustomStringConvertible {
         
         if world.locationExists(at: newLocation) {
             vector.location = newLocation
-        } else if world.contains(scent: self.vector) {
-            // lost robots do not execute instructions
-        } else {
+        } else if world.contains(scent: vector) == false {
             isLost = true
-            world.addLost(scent: self.vector)
+            world.addLost(scent: vector)
+            vector.location = newLocation
         }
-    }
-    
-    /// Tries to figure out if the robot can move to said location in the world
-    /// This will detect if the robot is on the edge and facing the edge marking that move as invalid.
-    func canMove(in world: Sizeable) -> Bool {
-        if (orientation == .north && location.y + 1 > world.size.height - 1) ||
-            (orientation == .east && location.x + 1 > world.size.width - 1) ||
-            (orientation == .south && location.y - 1 < 0) ||
-            (orientation == .west && location.x - 1 < 0) {
-            return false
-        }
-        return true
     }
     
     /// Object string description.

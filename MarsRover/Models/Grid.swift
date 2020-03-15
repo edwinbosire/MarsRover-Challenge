@@ -17,8 +17,8 @@ class Grid<T>: Sizeable {
     private var array: Array<T?>
     
     init(with size: CGSize) {
-        self.size = size
-        self.array = Array(repeating: nil, count: Int(size.width) * Int(size.height))
+        self.size = CGSize(width: size.width + 1, height: size.height + 1)
+        self.array = Array(repeating: nil, count: Int(self.size.width) * Int(self.size.height))
     }
     
     subscript(row: Int, column: Int) -> T? {
@@ -47,8 +47,10 @@ class Mars {
     /// - Parameters:
     ///     - point: CGPoint to be checked if it's within the grid
     func locationExists(at point: CGPoint) ->Bool {
-        return point.x >= 0 && point.x <= grid.size.width &&
-            point.y >= 0 && point.y <= grid.size.height
+        return point.x >= 0 &&
+            point.x <= grid.size.width - 1  &&
+            point.y >= 0 &&
+            point.y <= grid.size.height - 1
     }
     
     // MARK - Manage Lost Robots
