@@ -19,6 +19,8 @@
 		642B5CEC241EA1420094E841 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CEB241EA1420094E841 /* Extensions.swift */; };
 		642B5CEE241EA2140094E841 /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CED241EA2140094E841 /* Robot.swift */; };
 		642B5CF0241EA84D0094E841 /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CEF241EA84D0094E841 /* RobotTests.swift */; };
+		642B5CF4241EB7D20094E841 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CF3241EB7D20094E841 /* Orientation.swift */; };
+		642B5CF6241EB7FF0094E841 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B5CF5241EB7FF0094E841 /* Instruction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		642B5CEB241EA1420094E841 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		642B5CED241EA2140094E841 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		642B5CEF241EA84D0094E841 /* RobotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotTests.swift; sourceTree = "<group>"; };
+		642B5CF3241EB7D20094E841 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		642B5CF5241EB7FF0094E841 /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 			children = (
 				642B5CE7241E9B330094E841 /* Grid.swift */,
 				642B5CED241EA2140094E841 /* Robot.swift */,
+				642B5CF3241EB7D20094E841 /* Orientation.swift */,
+				642B5CF5241EB7FF0094E841 /* Instruction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,8 +256,10 @@
 				642B5CEC241EA1420094E841 /* Extensions.swift in Sources */,
 				642B5CC8241E99EC0094E841 /* ViewController.swift in Sources */,
 				642B5CC4241E99EC0094E841 /* AppDelegate.swift in Sources */,
+				642B5CF4241EB7D20094E841 /* Orientation.swift in Sources */,
 				642B5CC6241E99EC0094E841 /* SceneDelegate.swift in Sources */,
 				642B5CEE241EA2140094E841 /* Robot.swift in Sources */,
+				642B5CF6241EB7FF0094E841 /* Instruction.swift in Sources */,
 				642B5CE8241E9B330094E841 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,27 +8,6 @@
 
 import UIKit
 
-enum Orientation: CustomStringConvertible {
-    case north
-    case east
-    case south
-    case west
-    
-    var description: String {
-        switch self {
-        case .north: return "N"
-        case .west: return "W"
-        case .south: return "S"
-        case .east: return "E"
-        }
-    }
-}
-
-enum Instruction {
-    case left
-    case right
-    case forward
-}
 
 /// An object holding both the location and orientation
 struct Vector: Equatable {
