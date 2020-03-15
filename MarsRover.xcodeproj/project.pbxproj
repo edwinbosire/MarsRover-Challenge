@@ -81,10 +81,9 @@
 			children = (
 				642B5CC3241E99EC0094E841 /* AppDelegate.swift */,
 				642B5CC5241E99EC0094E841 /* SceneDelegate.swift */,
-				642B5CC7241E99EC0094E841 /* ViewController.swift */,
-				642B5CC9241E99EC0094E841 /* Main.storyboard */,
+				642B5CE6241E9A880094E841 /* ViewController */,
+				642B5CE5241E9A250094E841 /* Storyboard */,
 				642B5CCC241E99F40094E841 /* Assets.xcassets */,
-				642B5CCE241E99F40094E841 /* LaunchScreen.storyboard */,
 				642B5CD1241E99F40094E841 /* Info.plist */,
 			);
 			path = MarsRover;
@@ -97,6 +96,23 @@
 				642B5CDC241E99F50094E841 /* Info.plist */,
 			);
 			path = MarsRoverTests;
+			sourceTree = "<group>";
+		};
+		642B5CE5241E9A250094E841 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				642B5CC9241E99EC0094E841 /* Main.storyboard */,
+				642B5CCE241E99F40094E841 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		642B5CE6241E9A880094E841 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				642B5CC7241E99EC0094E841 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
